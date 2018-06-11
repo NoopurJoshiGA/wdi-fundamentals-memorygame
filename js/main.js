@@ -7,36 +7,44 @@ var cards = ["queen", "queen", "king", "king"];
 //create empty array to hold the cards in play
 var cardsInPlay = [];
 
-//declare variable for first card selected
-var cardOne = cards[0];
-cardsInPlay.push(cardOne);
+//function to check for a match
+function checkForMatch() {
+	if (cardsInPlay[0] === cardsInPlay[1]) {
+		console.log("You found a match!");
+	}
 
-//test (it should show queen)
-console.log("User flipped " + cardsInPlay);
+	else {
+		console.log("Sorry, try again.");
+	}
+}
 
-//declare variable for the second card selected (in this case it's the 3rd card)
-var cardTwo = cards[2];
-cardsInPlay.push(cardTwo);
+//create flipCard function
+function flipCard(cardId) {
+	console.log("User flipped " + cards[cardId]);
 
-//test (it should show king)
-console.log("User flipped " + cardsInPlay[1]);
+//push the flipped card to the cardsInPlay array
+cardsInPlay.push(cards[cardId]);
 
-//check if user has picked 2 cards
 if(cardsInPlay.length === 2) {
-	console.log("true");
+	checkForMatch();
+}
 }
 
-else { 
-	console.log ("false");
-}
+flipCard(0);
+flipCard(2);
 
-//check if there is a match
-if(cardsInPlay[0] === cardsInPlay[1]) {
-	alert("You found a match!");
-}
 
-else {
-	alert("Sorry, try again.");
-}
+
+
+
+//create a function
+//user flips card > add card to array > if 2 carsds are flipped check if they match
+
+
+
+
+
+
+
 
 
