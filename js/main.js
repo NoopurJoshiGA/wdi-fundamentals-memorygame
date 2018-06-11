@@ -1,12 +1,42 @@
-//check js is working
-alert("yes it's working");
+//test js file loads
+console.log("Up and running!");
 
-//declare 4 cards, 2 queens and 2 kings
-var cardOne = "queen";
-var cardTwo = "queen";
-var cardThree = "king";
-var cardFour = "king";
+//create an array to hold the cards
+var cards = ["queen", "queen", "king", "king"];
 
-//display two cards that are flipped in console
-console.log("User flipped " + cardTwo);
-console.log("User flipped " + cardFour);
+//create empty array to hold the cards in play
+var cardsInPlay = [];
+
+//declare variable for first card selected
+var cardOne = cards[0];
+cardsInPlay.push(cardOne);
+
+//test (it should show queen)
+console.log("User flipped " + cardsInPlay);
+
+//declare variable for the second card selected (in this case it's the 3rd card)
+var cardTwo = cards[2];
+cardsInPlay.push(cardTwo);
+
+//test (it should show king)
+console.log("User flipped " + cardsInPlay[1]);
+
+//check if user has picked 2 cards
+if(cardsInPlay.length === 2) {
+	console.log("true");
+}
+
+else { 
+	console.log ("false");
+}
+
+//check if there is a match
+if(cardsInPlay[0] === cardsInPlay[1]) {
+	alert("You found a match!");
+}
+
+else {
+	alert("Sorry, try again.");
+}
+
+
