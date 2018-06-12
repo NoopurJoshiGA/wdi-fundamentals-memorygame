@@ -1,8 +1,29 @@
 //test js file loads
 console.log("Up and running!");
 
-//create an array to hold the cards
-var cards = ["queen", "queen", "king", "king"];
+//create an array of objects to hold the cards
+var cards = [
+{
+	rank: "queen",
+	suit: "hearts",
+	path: "images/queen-of-hearts.png"
+},
+{
+	rank: "queen",
+	suit: "diamonds",
+	path: "images/queen-of-diamonds.png"
+},
+{
+	rank: "king",
+	suit: "hearts",
+	path: "images/king-of-hearts.png" 
+},
+{
+	rank: "king",
+	suit: "diamonds",
+	path: "images/king-of-diamonds.png"
+}
+];
 
 //create empty array to hold the cards in play
 var cardsInPlay = [];
@@ -20,10 +41,12 @@ function checkForMatch() {
 
 //create flipCard function
 function flipCard(cardId) {
-	console.log("User flipped " + cards[cardId]);
+	console.log("User flipped " + cards[cardId].rank);
+	console.log(cards[cardId].path);
+	console.log(cards[cardId].suit);
 
 //push the flipped card to the cardsInPlay array
-cardsInPlay.push(cards[cardId]);
+cardsInPlay.push(cards[cardId].rank);
 
 if(cardsInPlay.length === 2) {
 	checkForMatch();
@@ -33,12 +56,6 @@ if(cardsInPlay.length === 2) {
 flipCard(0);
 flipCard(2);
 
-
-
-
-
-//create a function
-//user flips card > add card to array > if 2 carsds are flipped check if they match
 
 
 
